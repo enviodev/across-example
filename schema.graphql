@@ -1,0 +1,217 @@
+type EventsSummary {
+  id: ID!
+  base_SpokePool_AdminChanged: [Base_SpokePool_AdminChanged!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_AdminChangedCount: BigInt!
+  base_SpokePool_BeaconUpgraded: [Base_SpokePool_BeaconUpgraded!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_BeaconUpgradedCount: BigInt!
+  base_SpokePool_EmergencyDeleteRootBundle: [Base_SpokePool_EmergencyDeleteRootBundle!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_EmergencyDeleteRootBundleCount: BigInt!
+  base_SpokePool_EnabledDepositRoute: [Base_SpokePool_EnabledDepositRoute!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_EnabledDepositRouteCount: BigInt!
+  base_SpokePool_ExecutedRelayerRefundRoot: [Base_SpokePool_ExecutedRelayerRefundRoot!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_ExecutedRelayerRefundRootCount: BigInt!
+  base_SpokePool_FilledV3Relay: [Base_SpokePool_FilledV3Relay!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_FilledV3RelayCount: BigInt!
+  base_SpokePool_Initialized: [Base_SpokePool_Initialized!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_InitializedCount: BigInt!
+  base_SpokePool_PausedDeposits: [Base_SpokePool_PausedDeposits!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_PausedDepositsCount: BigInt!
+  base_SpokePool_PausedFills: [Base_SpokePool_PausedFills!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_PausedFillsCount: BigInt!
+  base_SpokePool_RelayedRootBundle: [Base_SpokePool_RelayedRootBundle!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_RelayedRootBundleCount: BigInt!
+  base_SpokePool_RequestedSpeedUpV3Deposit: [Base_SpokePool_RequestedSpeedUpV3Deposit!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_RequestedSpeedUpV3DepositCount: BigInt!
+  base_SpokePool_RequestedV3SlowFill: [Base_SpokePool_RequestedV3SlowFill!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_RequestedV3SlowFillCount: BigInt!
+  base_SpokePool_SetHubPool: [Base_SpokePool_SetHubPool!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_SetHubPoolCount: BigInt!
+  base_SpokePool_SetL1Gas: [Base_SpokePool_SetL1Gas!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_SetL1GasCount: BigInt!
+  base_SpokePool_SetL2TokenBridge: [Base_SpokePool_SetL2TokenBridge!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_SetL2TokenBridgeCount: BigInt!
+  base_SpokePool_SetXDomainAdmin: [Base_SpokePool_SetXDomainAdmin!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_SetXDomainAdminCount: BigInt!
+  base_SpokePool_TokensBridged: [Base_SpokePool_TokensBridged!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_TokensBridgedCount: BigInt!
+  base_SpokePool_Upgraded: [Base_SpokePool_Upgraded!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_UpgradedCount: BigInt!
+  base_SpokePool_V3FundsDeposited: [Base_SpokePool_V3FundsDeposited!]! @derivedFrom(field: "eventsSummary")
+  base_SpokePool_V3FundsDepositedCount: BigInt!
+}
+
+type Base_SpokePool_AdminChanged {
+  id: ID!
+  previousAdmin: String!
+  newAdmin: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_BeaconUpgraded {
+  id: ID!
+  beacon: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_EmergencyDeleteRootBundle {
+  id: ID!
+  rootBundleId: BigInt!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_EnabledDepositRoute {
+  id: ID!
+  originToken: String!
+  destinationChainId: BigInt!
+  enabled: Boolean!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_ExecutedRelayerRefundRoot {
+  id: ID!
+  amountToReturn: BigInt!
+  chainId: BigInt!
+  refundAmounts: [BigInt!]!
+  rootBundleId: BigInt!
+  leafId: BigInt!
+  l2TokenAddress: String!
+  refundAddresses: [String!]!
+  caller: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_FilledV3Relay {
+  id: ID!
+  inputToken: String!
+  outputToken: String!
+  inputAmount: BigInt!
+  outputAmount: BigInt!
+  repaymentChainId: BigInt!
+  originChainId: BigInt!
+  depositId: BigInt!
+  fillDeadline: BigInt!
+  exclusivityDeadline: BigInt!
+  exclusiveRelayer: String!
+  relayer: String!
+  depositor: String!
+  recipient: String!
+  message: String!
+  relayExecutionInfo_0: String!
+  relayExecutionInfo_1: String!
+  relayExecutionInfo_2: BigInt!
+  relayExecutionInfo_3: BigInt!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_Initialized {
+  id: ID!
+  version: BigInt!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_PausedDeposits {
+  id: ID!
+  isPaused: Boolean!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_PausedFills {
+  id: ID!
+  isPaused: Boolean!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_RelayedRootBundle {
+  id: ID!
+  rootBundleId: BigInt!
+  relayerRefundRoot: String!
+  slowRelayRoot: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_RequestedSpeedUpV3Deposit {
+  id: ID!
+  updatedOutputAmount: BigInt!
+  depositId: BigInt!
+  depositor: String!
+  updatedRecipient: String!
+  updatedMessage: String!
+  depositorSignature: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_RequestedV3SlowFill {
+  id: ID!
+  inputToken: String!
+  outputToken: String!
+  inputAmount: BigInt!
+  outputAmount: BigInt!
+  originChainId: BigInt!
+  depositId: BigInt!
+  fillDeadline: BigInt!
+  exclusivityDeadline: BigInt!
+  exclusiveRelayer: String!
+  depositor: String!
+  recipient: String!
+  message: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_SetHubPool {
+  id: ID!
+  newHubPool: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_SetL1Gas {
+  id: ID!
+  newL1Gas: BigInt!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_SetL2TokenBridge {
+  id: ID!
+  l2Token: String!
+  tokenBridge: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_SetXDomainAdmin {
+  id: ID!
+  newAdmin: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_TokensBridged {
+  id: ID!
+  amountToReturn: BigInt!
+  chainId: BigInt!
+  leafId: BigInt!
+  l2TokenAddress: String!
+  caller: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_Upgraded {
+  id: ID!
+  implementation: String!
+  eventsSummary: String!
+}
+
+type Base_SpokePool_V3FundsDeposited {
+  id: ID!
+  inputToken: String!
+  outputToken: String!
+  inputAmount: BigInt!
+  outputAmount: BigInt!
+  destinationChainId: BigInt!
+  depositId: BigInt!
+  quoteTimestamp: BigInt!
+  fillDeadline: BigInt!
+  exclusivityDeadline: BigInt!
+  depositor: String!
+  recipient: String!
+  exclusiveRelayer: String!
+  message: String!
+  eventsSummary: String!
+}
